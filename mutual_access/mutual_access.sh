@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-cp /proj/cloudincr-PG0/tools/installers/id_rsa ~/.ssh/
-cp /proj/cloudincr-PG0/tools/installers/id_dsa ~/.ssh/
+gpg -d keys.tar.gz.gpg | tar xzvf -
+rm -rf ~/.ssh/id_*sa
+cp /proj/cloudincr-PG0/tools/installers/dd_rsa ~/.ssh/id_rsa
+cp /proj/cloudincr-PG0/tools/installers/dd_dsa ~/.ssh/id_dsa
+rm -rf dd_*
 ssh-agent bash
 ssh-add
