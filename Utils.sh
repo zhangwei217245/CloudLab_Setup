@@ -4,6 +4,12 @@ count=$1
 bound=`expr $count - 1`
 
 
+if [ "HOSTS" = $2 ]; then
+	for i in $(seq 0 $bound)
+	do
+		ssh-keyscan node-$i >> ~/.ssh/known_hosts
+	done
+fi
 
 # PUT file 
 if [ "PUT" = $2 ]; then
