@@ -1,10 +1,15 @@
 #!/bin/bash
+
+RELEASE="redis-3.2.3.tar.gz"
+REDIS=`echo $RELEASE| sed 's/.tar.gz//g'`
+
 mkdir -p /data/software
-axel -n 10 "http://download.redis.io/releases/redis-3.2.3.tar.gz"
-tar zxvf redis-3.2.3.tar.gz
-rm -rf redis-3.2.3.tar.gz
+axel -n 10 "http://download.redis.io/releases/$RELEASE"
+tar zxvf $RELEASE 
+rm -rf $RELEASE 
+cat redis_conf/redis.conf > $REDIS/redis.conf
 DIR=`pwd`
-cd redis-3.2.3; sudo make && sudo make install; cd utils; sed -e 's/\s*\([\+0-9a-zA-Z/\.]*\).*/\1/' << EOF | sudo ./install_server.sh
+cd $REDIS; sudo make && sudo make install; cd utils; sed -e 's/\s*\([\+0-9a-zA-Z/\.]*\).*/\1/' << EOF | sudo ./install_server.sh
  6379 #port number
    # default value
  /data/software/redis/log/6379.log #log file address
@@ -12,4 +17,4 @@ cd redis-3.2.3; sudo make && sudo make install; cd utils; sed -e 's/\s*\([\+0-9a
    # default value
    # enter pressed
 EOF
-cd $DIR; sudo rm -rf redis-3.2.3
+sudo rm -rf $DIR/$REDIS
