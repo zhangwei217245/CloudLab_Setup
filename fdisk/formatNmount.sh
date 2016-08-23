@@ -18,4 +18,5 @@ mkdir -p /data
 echo "$TGTDEV    /data   ext3    defaults     0        2" >> /etc/fstab
 mount -a
 chown -R daidong:cloudincr-PG0 /data
-
+su daidong
+mkdir -p /data/software
