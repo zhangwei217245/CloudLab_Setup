@@ -13,9 +13,12 @@ fi
 # Note that a blank line (commented as "defualt" will send a empty
 # line terminated with a newline to take the fdisk default.
 
+TGTDEV=$1
+if [ -z $TGTDEV ];then
 echo "Among all the following partitions, which one is your targeted device?"
 ls /dev/ |  grep sd
 read TGTDEV
+fi
 if [ -n "${TGTDEV}" ]; then
 sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${TGTDEV}
   n # new partition
@@ -26,4 +29,5 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${TGTDEV}
   w # write the partition table
   q # and we're done
 EOF
+shutdown -r now
 fi
