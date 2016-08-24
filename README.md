@@ -29,7 +29,6 @@ bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/mutual_access.sh
 ```
 ./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/fdisk/formatNmount.sh sda2"
 ```
-
 2. For `r320` Machine:
 ```
 ./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/fdisk/r320.sh sdb"
