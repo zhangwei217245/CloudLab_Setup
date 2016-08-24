@@ -6,6 +6,12 @@
 ./Utils.sh <# of nodes> HOSTS
 ```
 
+## Mutural Access is essential
+
+```
+bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/
+```
+
 ## Install basic software
 
 ```
