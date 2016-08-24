@@ -6,17 +6,23 @@ if [ "$(id -u)" -ne 0 ] ; then
 	exit 1
 fi
 
+TGTDEV=$1
+if [ -z $TGTDEV ];then
 echo "Among all the following partitions, which one do you want to format?"
 ls /dev/ |  grep sd
 read TGTDEV
-if [ -n "${TGTDEV}" ]; then
-	mkfs -t ext3 $TGTDEV	
 fi
 
-echo "Mounting device on /data"
-mkdir -p /data
-echo "$TGTDEV    /data   ext3    defaults     0        2" >> /etc/fstab
-mount -a
-chown -R daidong:cloudincr-PG0 /data
-su daidong
-mkdir -p /data/software
+if [ -n "${TGTDEV}" ]; then
+	fuser -km /data
+	umount -f /data
+	mkfs -t ext3 /dev/$TGTDEV	
+	echo "Mounting device on /data"
+	mkdir -p /data
+	echo "/dev/$TGTDEV    /data   ext3    defaults     0        2" >> /etc/fstab
+	mount -a
+	mkdir -p /data/software
+	chown -R daidong:cloudincr-PG0 /data
+	exit
+fi
+exit
