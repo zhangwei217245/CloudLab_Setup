@@ -9,7 +9,8 @@
 ## Mutural Access is essential
 
 ```
-bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/
+bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/mutual_access.sh
+./Utils.sh <# of nodes> PUT ~/.ssh/id_*sa ~/.ssh/
 ```
 
 ## Install basic software
