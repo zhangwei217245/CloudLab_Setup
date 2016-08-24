@@ -16,7 +16,8 @@ fi
 if [ -n "${TGTDEV}" ]; then
 	fuser -km /data
 	umount -f /data
-	mkfs -t ext3 /dev/$TGTDEV	
+	sed -i.bak '/'"$TGTDEV"'/d' /etc/fstab
+	yes | mkfs -t ext3 /dev/$TGTDEV	
 	echo "Mounting device on /data"
 	mkdir -p /data
 	echo "/dev/$TGTDEV    /data   ext3    defaults     0        2" >> /etc/fstab
