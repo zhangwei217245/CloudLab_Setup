@@ -7,7 +7,7 @@ sudo rm -rf /usr/share/doc/node
 sudo rm -rf /usr/share/man/man1/node.1
 sudo rm -rf /usr/share/systemtap/tapset/node.stp
 ARCH=$1
-VALIDARCH="armv6l|armv6l|arm64|x86|x64"
+VALIDARCH="armv6l|armv7l|arm64|x86|x64"
 VALIDARCHLIST=`echo ${VALIDARCH}| sed 's/[|]/ /g'`
 if [ -n "$ARCH" ]; then
 	if [[ $VALIDARCHLIST =~ $1 ]]; then
