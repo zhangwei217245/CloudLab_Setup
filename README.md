@@ -56,3 +56,28 @@ bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/mutual_access.sh
 ```
 ./Utils.sh <# of nodes> TTY "df -h | grep /data ; ls -l /data | grep 'software'"
 ```
+
+## Installing Java
+```
+./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/installation/java.sh"
+```
+
+## Installing NodeJS
+```
+./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/installation/node.sh <armv6l|armv7l|arm64|x86|x64>"
+```
+
+## Installing Redis
+```
+./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/installation/redis.sh"
+```
+
+## Installing MySQL
+```
+./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/installation/mysql.sh"
+```
+
+## Installing METIS (stay tuned)
+```
+./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/installation/metis.sh"
+```

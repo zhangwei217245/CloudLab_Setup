@@ -27,6 +27,8 @@ if [ -n "$ARCH" ]; then
 		sudo ln -s $CURDIR/$NODEARM/share/doc/* /usr/share/doc/
 		sudo ln -s $CURDIR/$NODEARM/share/man/man1/* /usr/share/man/man1/
 		sudo ln -s $CURDIR/$NODEARM/share/systemtap/tapset/* /usr/share/systemtap/tapset/
+		node -v
+		npm -v
 		exit;
 	fi
 	echo "Only support these architectures:(armv6l|armv6l|arm64|x86|x64)"

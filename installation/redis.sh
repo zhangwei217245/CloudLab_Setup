@@ -7,7 +7,9 @@ mkdir -p /data/software
 axel -n 10 "http://download.redis.io/releases/$RELEASE"
 tar zxvf $RELEASE 
 rm -rf $RELEASE 
-cat redis_conf/redis.conf > $REDIS/redis.conf
+cat /proj/cloudincr-PG0/setup/CloudLab_Setup/installation/redis_conf/redis.conf > $REDIS/redis.conf
+sudo mkdir -p /var/run/redis
+sudo touch /var/run/redis/redis.sock
 DIR=`pwd`
 cd $REDIS; sudo make && sudo make install; cd utils; sed -e 's/\s*\([\+0-9a-zA-Z/\.]*\).*/\1/' << EOF | sudo ./install_server.sh
  6379 #port number
@@ -18,3 +20,4 @@ cd $REDIS; sudo make && sudo make install; cd utils; sed -e 's/\s*\([\+0-9a-zA-Z
    # enter pressed
 EOF
 sudo rm -rf $DIR/$REDIS
+redis-cli info
