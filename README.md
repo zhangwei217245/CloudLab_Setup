@@ -24,7 +24,7 @@ bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/mutual_access.sh
 ./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/installation/install.sh"
 ```
 
-## Create More Valid Partition
+## Create More Valid Partitions
 
 * For `m400` Machines:
 ```
