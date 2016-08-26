@@ -12,6 +12,11 @@
 bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/mutual_access.sh
 ./Utils.sh <# of nodes> PUT ~/.ssh/id_*sa ~/.ssh/
 ```
+## Increase the file limit
+
+```
+./Utils.sh <# of nodes> LIMIT
+```
 
 ## Install basic software
 
@@ -37,3 +42,17 @@ bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/mutual_access.sh
 ./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/fdisk/formatNmount.sh sdb1"
 ```
 
+## Reboot the nodes:
+```
+./Utils.sh <# of nodes> TTY "sudo shutdown -r now"
+```
+
+## Checking the ulimit:
+```
+./Utils.sh <# of nodes> TTY "ulimit -a"
+```
+
+## Checking Disk Partitioning Result:
+```
+./Utils.sh <# of nodes> TTY "df -h; ls -l /data | grep './'"
+```
