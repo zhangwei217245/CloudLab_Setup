@@ -13,7 +13,7 @@ fi
 
 # PUT file 
 if [ "PUT" = $2 ]; then
-	for i in $(seq 0 $bound)
+	for i in $(seq 1 $bound)
 	do
     	echo PUT Node-$(($bound - $i))
     	scp -r $3 node-$(($bound - $i)):$4
