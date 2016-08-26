@@ -69,7 +69,7 @@ if [ "PS" = $2 ]; then
 	for i in $(seq 0 $bound)
 	do
     	echo PS Node-$(($bound - $i))
-    	ssh -t node-$(($bound - $i)) "ps -ef | grep $3 | grep -v grep"
+    	ssh -t node-$(($bound - $i)) "ps -ef | grep $3 | grep -v grep| grep -v Utils.sh"
 	done
 fi
 
