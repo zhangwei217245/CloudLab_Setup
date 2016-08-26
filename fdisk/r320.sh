@@ -19,7 +19,7 @@ ls /dev/ |  grep sd
 read TGTDEV
 fi
 if [ -n "${TGTDEV}" ]; then
-sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk ${TGTDEV}
+sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${TGTDEV}
   o # clear the in memory partition table
   n # new partition
   p # primary partition
