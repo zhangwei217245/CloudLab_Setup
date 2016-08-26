@@ -15,7 +15,7 @@ fi
 if [ "PUT" = $2 ]; then
 	for i in $(seq 0 $bound)
 	do
-    	echo SOURCE Node-$(($bound - $i))
+    	echo PUT Node-$(($bound - $i))
     	scp -r $3 node-$(($bound - $i)):$4
 	done
 fi
@@ -41,7 +41,7 @@ fi
 if [ "TTY" = $2 ]; then
 	for i in $(seq 0 $bound)
 	do
-    	echo CMD Node-$(($bound - $i))
+    	echo TTY Node-$(($bound - $i))
     	ssh -t node-$(($bound - $i)) "$3" 
 	done
 fi
