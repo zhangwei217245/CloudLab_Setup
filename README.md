@@ -77,7 +77,7 @@ bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/mutual_access.sh
 ./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/installation/mysql.sh"
 ```
 
-## Installing METIS (stay tuned)
+## Installing METIS
 ```
 ./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/installation/metis.sh"
 ```
