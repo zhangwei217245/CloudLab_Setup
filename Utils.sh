@@ -78,6 +78,6 @@ if [ "LIMIT" = $2 ]; then
 	for i in $(seq 0 $bound)
 	do
 		echo Increase File Open Limit on Node-$(($bound - $i))
-		ssh -t node-$(($bound - $i)) "sudo cp /proj/cloudincr-PG0/setup/CloudLab_Setup/ulimit/limits.conf /etc/security/limits.conf; sudo echo 'session required pam_limits.so' >> /etc/pam.d/common-session; ulimit -a; sudo shutdown -r now"
+		ssh -t node-$(($bound - $i)) "sudo cp /proj/cloudincr-PG0/setup/CloudLab_Setup/ulimit/limits.conf /etc/security/limits.conf; sudo echo 'session required pam_limits.so' >> /etc/pam.d/common-session; ulimit -a; "
 	done
 fi
