@@ -1,12 +1,31 @@
 # CloudLab_Setup
 
+## Generate SSH key pair on your computer, with name as id_rsa
+
+## Add public key id_rsa.pub to your cloudlab account
+
+## With you private key, do the following:
+  1. Encrypt the key again with your password.
+    ```
+    tar cvzf - id_rsa | gpg -o accesskeys.tgz.gpg --symmetric
+    ```
+  2. Copy the file accesskeys.tgz.gpg to your head node.
+    ```
+    scp accesskeys.tgz.gpg username@hostname:~/.ssh/
+    ```
+  3. Login to the head node, decrypt the key and copy it to the node
+    ```
+    gpg -d $SCRIPTPATH/accesskeys.tgz.gpg | tar xzvf -
+    mv id_rsa ~/.ssh/
+    ```
+
 ## Initiate Head Node
 
 ```
 ./Utils.sh <# of nodes> HOSTS
 ```
 
-## Mutural Access is essential
+## Mutural Access is essential(Deprecated)
 
 ```
 bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/mutual_access.sh
