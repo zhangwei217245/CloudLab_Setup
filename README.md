@@ -2,6 +2,8 @@
 
 ## Generate SSH key pair on your computer, with name as id_rsa
 
+Please refer to https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+
 ## Add public key id_rsa.pub to your cloudlab account
 
 ## With you private key, do the following:
