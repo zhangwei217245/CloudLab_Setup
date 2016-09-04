@@ -30,11 +30,11 @@ Please refer to https://help.github.com/articles/generating-a-new-ssh-key-and-ad
 ./Utils.sh <# of nodes> HOSTS
 ```
 
-## Mutural Access is essential(Deprecated)
+## Mutural Access is optional(Deprecated)
 
 ```
 bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/mutual_access.sh
-./Utils.sh <# of nodes> PUT ~/.ssh/id_*sa ~/.ssh/
+./Utils.sh <# of nodes> PUT ~/.ssh/id_rsa ~/.ssh/
 ```
 ## Increase the file limit
 
