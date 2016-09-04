@@ -8,14 +8,17 @@ Please refer to https://help.github.com/articles/generating-a-new-ssh-key-and-ad
 
 ## With you private key, do the following:
   1. Encrypt the key again with your password.
+    
     ```
     tar cvzf - id_rsa | gpg -o accesskeys.tgz.gpg --symmetric
     ```
   2. Copy the file accesskeys.tgz.gpg to your head node.
+    
     ```
     scp accesskeys.tgz.gpg username@hostname:~/.ssh/
     ```
   3. Login to the head node, decrypt the key and copy it to the node
+    
     ```
     gpg -d $SCRIPTPATH/accesskeys.tgz.gpg | tar xzvf -
     mv id_rsa ~/.ssh/
