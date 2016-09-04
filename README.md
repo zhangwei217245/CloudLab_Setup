@@ -1,10 +1,12 @@
 # CloudLab_Setup
 
-## Generate SSH key pair on your computer, with name as id_rsa
+## Generate SSH key pair on your own computer, with name as id_rsa
 
 Please refer to https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 
-## Add public key id_rsa.pub to your cloudlab account
+## Add public key id_rsa.pub to your cloudlab account, also you can register your public key in your github account.
+
+## Instantiate multiple machines on CloudLab, and do the following:
 
 ## With you private key, do the following:
   1. Encrypt the key again with your password.
@@ -22,6 +24,22 @@ Please refer to https://help.github.com/articles/generating-a-new-ssh-key-and-ad
     ```
     gpg -d $SCRIPTPATH/accesskeys.tgz.gpg | tar xzvf -
     mv id_rsa ~/.ssh/
+    ```
+  4. Create directories under `/proj/<projectName>/`
+    
+    ```
+    mkdir -p /proj/<projectName>/setup
+    ```
+  5. Clone this repo onto into your `setup` folder:
+    
+    ```
+    cd /proj/<projectName>/setup
+    git clone "git@github.com:zhangwei217245/CloudLab_Setup.git" 
+    ```
+    Or if you already cloned this repo into your setup folder, make sure you will pull the latest version from the repo.
+    ```
+    cd /proj/<projectName>/setup/CloudLab_Setup
+    git pull
     ```
 
 ## Initiate Head Node
