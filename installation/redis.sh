@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PROJNAME=`groups|awk '{print $1}'`
+
 RELEASE="redis-3.2.3.tar.gz"
 REDIS=`echo $RELEASE| sed 's/.tar.gz//g'`
 
@@ -7,7 +9,7 @@ mkdir -p /data/software
 axel -n 10 "http://download.redis.io/releases/$RELEASE"
 tar zxvf $RELEASE 
 rm -rf $RELEASE 
-cat /proj/cloudincr-PG0/setup/CloudLab_Setup/installation/redis_conf/redis.conf > $REDIS/redis.conf
+cat /proj/${PROJNAME}/setup/CloudLab_Setup/installation/redis_conf/redis.conf > $REDIS/redis.conf
 sudo mkdir -p /var/run/redis
 sudo touch /var/run/redis/redis.sock
 DIR=`pwd`
