@@ -7,6 +7,8 @@ if [ "$(id -u)" -ne 0 ] ; then
 fi
 
 TGTDEV=$1
+USER=`whoami`
+GROUP=`groups | awk '{print $1}'`
 if [ -z $TGTDEV ];then
 echo "Among all the following partitions, which one do you want to format?"
 ls /dev/ |  grep sd
@@ -23,7 +25,7 @@ if [ -n "${TGTDEV}" ]; then
 	echo "/dev/$TGTDEV    /data   ext3    defaults     0        2" >> /etc/fstab
 	mount -a
 	mkdir -p /data/software
-	chown -R daidong:cloudincr-PG0 /data
+	chown -R ${USER}:${GROUP} /data
 	exit
 fi
 exit
