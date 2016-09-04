@@ -2,7 +2,7 @@
 
 count=$1
 bound=`expr $count - 1`
-
+PROJNAME=`groups | awk '{print $1}'`
 
 if [ "HOSTS" = $2 ]; then
 	for i in $(seq 0 $bound)
@@ -78,6 +78,6 @@ if [ "LIMIT" = $2 ]; then
 	for i in $(seq 0 $bound)
 	do
 		echo Increase File Open Limit on Node-$(($bound - $i))
-		ssh -t node-$(($bound - $i)) "sudo cp /proj/cloudincr-PG0/setup/CloudLab_Setup/ulimit/limits.conf /etc/security/limits.conf; sudo echo 'session required pam_limits.so' >> /etc/pam.d/common-session; ulimit -a; "
+		ssh -t node-$(($bound - $i)) "sudo cp /proj/${PROJNAME}/setup/CloudLab_Setup/ulimit/limits.conf /etc/security/limits.conf; sudo echo 'session required pam_limits.so' >> /etc/pam.d/common-session; ulimit -a; "
 	done
 fi
