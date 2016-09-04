@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#check for root user
-if [ "$(id -u)" -ne 0 ] ; then
-	echo "You must run this script as root. Sorry!"
-	exit 1
-fi
-
 TGTDEV=$1
 USER=`whoami`
 GROUP=`groups | awk '{print $1}'`
@@ -15,17 +9,10 @@ ls /dev/ |  grep sd
 read TGTDEV
 fi
 
-if [ -n "${TGTDEV}" ]; then
-	fuser -km /data
-	umount -f /data
-	sed -i.bak '/'"$TGTDEV"'/d' /etc/fstab
-	yes | mkfs -t ext3 /dev/$TGTDEV	
-	echo "Mounting device on /data"
-	mkdir -p /data
-	echo "/dev/$TGTDEV    /data   ext3    defaults     0        2" >> /etc/fstab
-	mount -a
-	mkdir -p /data/software
-	chown -R ${USER}:${GROUP} /data
-	exit
-fi
-exit
+#Absolute path to this script
+SCRIPT=$(readlink -f $0)
+#Absolute path this script is in
+SCRIPTPATH=$(dirname $SCRIPT)
+
+sudo bash ${SCRIPTPATH}/.formatNmount.sh $TGTDEV $USER $GROUP
+
