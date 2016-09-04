@@ -57,13 +57,13 @@ bash /proj/cloudincr-PG0/setup/CloudLab_Setup/mutual_access/mutual_access.sh
 
    * Note: The m400 machine will reboot after new partition is created. You should login the head machine after it is rebooted and do the following :
 ```
-./Utils.sh <# of nodes> TTY "sudo bash /proj/cloudincr-PG0/setup/CloudLab_Setup/fdisk/formatNmount.sh sda2"
+./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/fdisk/formatNmount.sh sda2"
 ```
 
 * For `r320` Machine:
 ```
 ./Utils.sh <# of nodes> TTY "sudo bash /proj/cloudincr-PG0/setup/CloudLab_Setup/fdisk/r320.sh sdb"
-./Utils.sh <# of nodes> TTY "sudo bash /proj/cloudincr-PG0/setup/CloudLab_Setup/fdisk/formatNmount.sh sdb1"
+./Utils.sh <# of nodes> TTY "bash /proj/cloudincr-PG0/setup/CloudLab_Setup/fdisk/formatNmount.sh sdb1"
 ```
 
 ## Reboot the nodes:
