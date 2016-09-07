@@ -75,7 +75,7 @@ bash /proj/${PROJNAME}/setup/CloudLab_Setup/mutual_access/mutual_access.sh
 ## Install basic software
 
 ```
-./Utils.sh <# of nodes> TTY "bash /proj/${PROJNAME}/setup/CloudLab_Setup/installation/install.sh"
+./Utils.sh <# of nodes> CMD "nohup bash /proj/${PROJNAME}/setup/CloudLab_Setup/installation/install.sh > ~/nohup.out &"
 ```
 
 ## Create More Valid Partitions
