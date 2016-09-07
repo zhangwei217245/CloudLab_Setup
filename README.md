@@ -77,6 +77,11 @@ bash /proj/${PROJNAME}/setup/CloudLab_Setup/mutual_access/mutual_access.sh
 ```
 ./Utils.sh <# of nodes> CMD "nohup bash /proj/${PROJNAME}/setup/CloudLab_Setup/installation/install.sh > ~/nohup.out &"
 ```
+Then you run the following until you see "Installation successful!"
+
+```
+./Utils.sh <# of nodes> TTY "tail -1 ~/nohup.out"
+```
 
 ## Create More Valid Partitions
 
