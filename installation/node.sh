@@ -12,7 +12,7 @@ VALIDARCHLIST=`echo ${VALIDARCH}| sed 's/[|]/ /g'`
 if [ -n "$ARCH" ]; then
 	if [[ $VALIDARCHLIST =~ $1 ]]; then
 		mkdir -p /data/software
-		VERSION="v6.4.0"
+		VERSION="v6.5.0"
 		RELEASE="node-${VERSION}-linux-${ARCH}.tar.xz"
 		NODEARM=`echo $RELEASE| sed 's/.tar.xz//g'`
 		rm -rf /data/software/${NODEARM}*
