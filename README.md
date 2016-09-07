@@ -1,6 +1,10 @@
 # CloudLab_Setup
 
 **Before beginning, we assume PROJNAME="cloudincr-PG0"**
+On the head node, it's better to do the following:
+```
+PROJNAME=`groups | awk '{print $1}'`
+```
 
 ## Generate SSH key pair on your own computer, with name as id_rsa
 
