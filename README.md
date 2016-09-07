@@ -49,6 +49,12 @@ Please refer to https://help.github.com/articles/generating-a-new-ssh-key-and-ad
 ```
 ./Utils.sh <# of nodes> HOSTS
 ```
+## If you need to clone your project from any code repository, do the following:
+  
+  1. For github.com ``` ./Utils.sh <# of nodes> TTY "ssh-keyscan github.com >> ~/.ssh/known_hosts" ```
+  2. For gitlab.com ``` ./Utils.sh <# of nodes> TTY "ssh-keyscan gitlab.com >> ~/.ssh/known_hosts" ```
+  3. For bitbucket.com ``` ./Utils.sh <# of nodes> TTY "ssh-keyscan bitbucket.com >> ~/.ssh/known_hosts" ```
+  4. For gitlab in DISCL: ``` ./Utils.sh <# of nodes> TTY "ssh-keyscan discl.cs.ttu.edu >> ~/.ssh/known_hosts" ```
 
 ## Mutural Access is optional(Deprecated)
 
