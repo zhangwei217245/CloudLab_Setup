@@ -5,7 +5,7 @@ USER=`whoami`
 GROUP=`groups | awk '{print $1}'`
 if [ -z $TGTDEV ];then
 echo "Among all the following partitions, which one do you want to format?"
-ls /dev/ |  grep sd
+ls /dev/ |  egrep "(sd|nvme0n1p)"
 read TGTDEV
 fi
 
