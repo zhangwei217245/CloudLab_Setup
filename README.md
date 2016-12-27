@@ -85,6 +85,13 @@ Then you run the following until you see "Installation successful!"
 
 ## Create More Valid Partitions
 
+* For `m510` Machines:
+
+```
+./Utils.sh <# of nodes> TTY "sudo bash /proj/${PROJNAME}/setup/CloudLab_Setup/fdisk/m510.sh"
+```
+And you will be all set!
+
 * For `m400` Machines:
 ```
 ./Utils.sh <# of nodes> TTY "sudo bash /proj/${PROJNAME}/setup/CloudLab_Setup/fdisk/m400.sh sda"
