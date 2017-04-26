@@ -8,6 +8,7 @@ sleep 3s
 mkdir -p /data/software/docker ; mv /var/lib/docker/* /data/software/; rm -rf /var/lib/docker
 ln -s /data/software/docker /var/lib/docker
 service docker start
+sudo usermod -a -G docker zhang56
 
 echo "fish" >> ~/.profile
 curl -L http://get.oh-my.fish > installomf
