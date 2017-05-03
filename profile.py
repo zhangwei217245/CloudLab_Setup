@@ -1,3 +1,10 @@
+"""This is a profile for reserving any number of nodes of any type. 
+
+Instructions:
+If you specify the amount of block storage, then for every node, CloudLab will try to assign a block storage of the specified amount to it, if there is sufficient total amount of block storage on the site. 
+If you don't need block storage, simply put nothing for the amount of the storage. 
+If you need to mount existing dataset as block storage, just paste the URN of the dataset image. 
+"""
 import geni.portal as portal
 import geni.rspec.pg as pg
 
