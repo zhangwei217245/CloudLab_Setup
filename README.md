@@ -1,6 +1,6 @@
 # CloudLab_Setup
 
-**Before beginning, create your profile using this github repo:
+**Before beginning, create your profile using this github repo:**
 
 1. Login to your cloudlab account
 2. Visit this webpage: https://www.cloudlab.us/manage_profile.php
