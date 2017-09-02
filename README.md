@@ -50,7 +50,7 @@ Please refer to https://help.github.com/articles/generating-a-new-ssh-key-and-ad
 ## Mutural Access is optional(Deprecated)
 
 ```
-bash /proj/${PROJNAME}/setup/CloudLab_Setup/mutual_access/mutual_access.sh
+bash /local/repository/mutual_access/mutual_access.sh
 ./Utils.sh <# of nodes> PUT ~/.ssh/id_rsa ~/.ssh/
 ```
 ## Increase the file limit
@@ -62,7 +62,7 @@ bash /proj/${PROJNAME}/setup/CloudLab_Setup/mutual_access/mutual_access.sh
 ## Install basic software
 
 ```
-./Utils.sh <# of nodes> CMD "nohup bash /proj/${PROJNAME}/setup/CloudLab_Setup/installation/install.sh > ~/nohup.out &"
+./Utils.sh <# of nodes> CMD "nohup bash /local/repository/installation/install.sh > ~/nohup.out &"
 ```
 Then you run the following until you see "Installation successful!"
 
@@ -75,30 +75,30 @@ Then you run the following until you see "Installation successful!"
 * For `c220g2` Machines:
 
 ```
-./Utils.sh <# of nodes> TTY "sudo bash /proj/${PROJNAME}/setup/CloudLab_Setup/fdisk/c220g2.sh"
+./Utils.sh <# of nodes> TTY "sudo bash /local/repository/fdisk/c220g2.sh"
 ```
 
 * For `m510` Machines:
 
 ```
-./Utils.sh <# of nodes> TTY "sudo bash /proj/${PROJNAME}/setup/CloudLab_Setup/fdisk/m510.sh"
+./Utils.sh <# of nodes> TTY "sudo bash /local/repository/fdisk/m510.sh"
 ```
 And you will be all set!
 
 * For `m400` Machines:
 ```
-./Utils.sh <# of nodes> TTY "sudo bash /proj/${PROJNAME}/setup/CloudLab_Setup/fdisk/m400.sh sda"
+./Utils.sh <# of nodes> TTY "sudo bash /local/repository/fdisk/m400.sh sda"
 ```
 
    * Note: The m400 machine will reboot after new partition is created. You should login the head machine after it is rebooted and do the following :
 ```
-./Utils.sh <# of nodes> TTY "bash /proj/${PROJNAME}/setup/CloudLab_Setup/fdisk/formatNmount.sh sda2"
+./Utils.sh <# of nodes> TTY "bash /local/repository/fdisk/formatNmount.sh sda2"
 ```
 
 * For `r320` Machine:
 ```
-./Utils.sh <# of nodes> TTY "sudo bash /proj/${PROJNAME}/setup/CloudLab_Setup/fdisk/r320.sh sdb"
-./Utils.sh <# of nodes> TTY "bash /proj/${PROJNAME}/setup/CloudLab_Setup/fdisk/formatNmount.sh sdb1"
+./Utils.sh <# of nodes> TTY "sudo bash /local/repository/fdisk/r320.sh sdb"
+./Utils.sh <# of nodes> TTY "bash /local/repository/fdisk/formatNmount.sh sdb1"
 ```
 
 ## Reboot the nodes:
@@ -118,25 +118,25 @@ And you will be all set!
 
 ## Installing Java
 ```
-./Utils.sh <# of nodes> TTY "bash /proj/${PROJNAME}/setup/CloudLab_Setup/installation/java.sh"
+./Utils.sh <# of nodes> TTY "bash /local/repository/installation/java.sh"
 ```
 
 ## Installing NodeJS
 ```
-./Utils.sh <# of nodes> TTY "bash /proj/${PROJNAME}/setup/CloudLab_Setup/installation/node.sh <armv6l|armv7l|arm64|x86|x64>"
+./Utils.sh <# of nodes> TTY "bash /local/repository/installation/node.sh <armv6l|armv7l|arm64|x86|x64>"
 ```
 
 ## Installing Redis
 ```
-./Utils.sh <# of nodes> TTY "bash /proj/${PROJNAME}/setup/CloudLab_Setup/installation/redis.sh"
+./Utils.sh <# of nodes> TTY "bash /local/repository/installation/redis.sh"
 ```
 
 ## Installing MySQL
 ```
-./Utils.sh <# of nodes> TTY "bash /proj/${PROJNAME}/setup/CloudLab_Setup/installation/mysql.sh"
+./Utils.sh <# of nodes> TTY "bash /local/repository/installation/mysql.sh"
 ```
 
 ## Installing METIS
 ```
-./Utils.sh <# of nodes> TTY "bash /proj/${PROJNAME}/setup/CloudLab_Setup/installation/metis.sh"
+./Utils.sh <# of nodes> TTY "bash /local/repository/installation/metis.sh"
 ```
