@@ -7,6 +7,7 @@
 3. Click on the button "GitRepo"
 4. Copy and paste the http form of the repository link and confirm. And then create the profile. 
 5. Create an experiment using the profile you just created. 
+6. Any problem with the use of this project, please shoot your email at x-spirit.zhang@ttu.edu
 
 ## Generate SSH key pair on your own computer, with name as id_rsa
 
