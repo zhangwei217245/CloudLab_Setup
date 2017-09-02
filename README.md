@@ -1,10 +1,12 @@
 # CloudLab_Setup
 
-**Before beginning, we assume PROJNAME="cloudincr-PG0"**
-On the head node, it's better to do the following:
-```
-PROJNAME=`groups | awk '{print $1}'`
-```
+**Before beginning, create your profile using this github repo:
+
+1. Login to your cloudlab account
+2. Visit this webpage: https://www.cloudlab.us/manage_profile.php
+3. Click on the button "GitRepo"
+4. Copy and paste the http form of the repository link and confirm. 
+5. Create an experiment using the profile you just created. 
 
 ## Generate SSH key pair on your own computer, with name as id_rsa
 
@@ -31,22 +33,7 @@ Please refer to https://help.github.com/articles/generating-a-new-ssh-key-and-ad
     gpg -d $SCRIPTPATH/accesskeys.tgz.gpg | tar xzvf -
     mv id_rsa ~/.ssh/
     ```
-  4. Create directories under `/proj/${PROJNAME}/`
-    
-    ```
-    mkdir -p /proj/${PROJNAME}/setup
-    ```
-  5. Clone this repo onto into your `setup` folder:
-    
-    ```
-    cd /proj/${PROJNAME}/setup
-    git clone "git@github.com:zhangwei217245/CloudLab_Setup.git" 
-    ```
-    Or if you already cloned this repo into your setup folder, make sure you will pull the latest version from the repo.
-    ```
-    cd /proj/${PROJNAME}/setup/CloudLab_Setup
-    git pull
-    ```
+  4. Goto `/local/repository` directory to see all the scripts needed in this tutorial. 
 
 ## Initiate Head Node
 
@@ -84,6 +71,12 @@ Then you run the following until you see "Installation successful!"
 ```
 
 ## Create More Valid Partitions
+
+* For `c220g2` Machines:
+
+```
+./Utils.sh <# of nodes> TTY "sudo bash /proj/${PROJNAME}/setup/CloudLab_Setup/fdisk/c220g2.sh"
+```
 
 * For `m510` Machines:
 
