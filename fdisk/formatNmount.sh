@@ -4,11 +4,16 @@ TGTDEV=$1
 USER=`whoami`
 GROUP=`groups | awk '{print $1}'`
 
-$MOUNTPOINT="/data"
+MOUNTPOINT="/data"
 
-if [ -n $2 ];then
-MOUNTPOINT=$2
+if [ -z $2 ];then
+	MOUNTPOINT=/data
+else
+	MOUNTPOINT=$2
 fi
+
+
+echo "Device $TGTDEV will be mounted to $MOUNTPOINT"
 
 if [ -z $TGTDEV ];then
 echo "Among all the following partitions, which one do you want to format?"

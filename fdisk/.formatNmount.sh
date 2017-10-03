@@ -11,8 +11,10 @@ USER=$2
 GROUP=$3
 
 MOUNTPOINT=/data
-if [ -n $MOUNTPOINT ];then
-MOUNTPOINT=$4
+if [ -z $MOUNTPOINT ];then
+	MOUNTPOINT=/data
+else
+	MOUNTPOINT=$4
 fi
 
 if [ -z $TGTDEV ];then
@@ -26,7 +28,7 @@ if [ -n "${TGTDEV}" ]; then
 	umount -f $MOUNTPOINT
 	sed -i.bak '/'"$TGTDEV"'/d' /etc/fstab
 	yes | mkfs -t ext3 /dev/$TGTDEV	
-	echo "Mounting device on /data"
+	echo "============= Mounting device $TGTDEV   on $MOUNTPOINT ======== "
 	mkdir -p $MOUNTPOINT
 	echo "/dev/$TGTDEV    $MOUNTPOINT   ext3    defaults     0        2" >> /etc/fstab
 	mount -a
