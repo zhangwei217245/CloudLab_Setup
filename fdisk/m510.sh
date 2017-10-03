@@ -10,7 +10,7 @@ SCRIPT=$(readlink -f $0)
 #Absolute path this script is in
 SCRIPTPATH=$(dirname $SCRIPT)
 
-sudo bash ${SCRIPTPATH}/.formatNmount.sh $TGTDEV $USER $GROUP
+sudo bash ${SCRIPTPATH}/.formatNmount.sh $TGTDEV $USER $GROUP /data
 df -h
 
 echo "======= NOTICE: YOU ARE ALL SET!!!!! ========"
