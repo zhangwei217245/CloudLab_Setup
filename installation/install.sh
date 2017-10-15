@@ -14,3 +14,4 @@ echo "fish" >> ~/.profile
 curl -L http://get.oh-my.fish > installomf
 fish installomf --noninteractive
 rm -rf installomf
+echo "omf install cbjohnson" | fish
