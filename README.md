@@ -68,7 +68,7 @@ bash /local/repository/mutual_access/mutual_access.sh
 Then you run the following until you see "Installation successful!"
 
 ```
-./Utils.sh <# of nodes> TTY "tail -1 ~/nohup.out"
+./Utils.sh <# of nodes> TTY "tail -100 ~/nohup.out | grep 'Installation successful!' "
 ```
 
 ## Create More Valid Partitions
