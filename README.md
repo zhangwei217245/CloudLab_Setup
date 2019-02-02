@@ -36,6 +36,7 @@ Please refer to https://help.github.com/articles/generating-a-new-ssh-key-and-ad
     ```
   4. Goto `/local/repository` directory to see all the scripts needed in this tutorial. 
 
+
 ## Initiate Head Node
 
 ```
@@ -54,6 +55,13 @@ Please refer to https://help.github.com/articles/generating-a-new-ssh-key-and-ad
 bash /local/repository/mutual_access/mutual_access.sh
 ./Utils.sh <# of nodes> PUT ~/.ssh/id_rsa ~/.ssh/
 ```
+
+## Make the cluster exclusively used by you:
+
+```
+./Utils.sh <# of nodes> TTY "cd /users/; sudo ls | grep -v ${USER}| grep -v geniuser | xargs rm -rf"
+```
+
 ## Increase the file limit
 
 ```
