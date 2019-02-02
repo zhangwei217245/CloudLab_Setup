@@ -68,17 +68,6 @@ bash /local/repository/mutual_access/mutual_access.sh
 ./Utils.sh <# of nodes> LIMIT
 ```
 
-## Install basic software
-
-```
-./Utils.sh <# of nodes> CMD "nohup bash /local/repository/installation/install.sh > ~/nohup.out &"
-```
-Then you run the following until you see "Installation successful!"
-
-```
-./Utils.sh <# of nodes> TTY "tail -100 ~/nohup.out | grep 'Installation successful!' "
-```
-
 ## Create More Valid Partitions
 
 * For `c220g2` Machines:
@@ -123,6 +112,18 @@ And you will be all set!
 ## Checking Disk Partitioning Result:
 ```
 ./Utils.sh <# of nodes> TTY "df -h | grep /data ; ls -l /data | grep 'software'"
+```
+
+
+## Install basic software
+
+```
+./Utils.sh <# of nodes> CMD "nohup bash /local/repository/installation/install.sh > ~/nohup.out &"
+```
+Then you run the following until you see "Installation successful!"
+
+```
+./Utils.sh <# of nodes> TTY "tail -100 ~/nohup.out | grep 'Installation successful!' "
 ```
 
 ## Installing Java
