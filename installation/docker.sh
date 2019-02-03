@@ -19,12 +19,12 @@ sudo add-apt-repository \
    stable"
   
 sudo apt-get update -y 
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
 
-service docker stop
+sudo service docker stop
 sleep 3s
-mkdir -p /data/software/lib/docker ; mv /var/lib/docker/* /data/software/lib/docker/; rm -rf /var/lib/docker
+sudo mkdir -p /data/software/lib/docker ; sudo mv /var/lib/docker/* /data/software/lib/docker/; sudo rm -rf /var/lib/docker
 sudo ln -s /data/software/lib/docker /var/lib/docker
-service docker start
+sudo service docker start
 sudo usermod -a -G docker zhang56
