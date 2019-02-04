@@ -120,11 +120,25 @@ And you will be all set!
 ```
 ./Utils.sh <# of nodes> CMD "nohup bash /local/repository/installation/install.sh > ~/nohup.out &"
 ```
-Then you run the following until you see "Installation successful!"
+Then you run the following command again and again until you see "Installation successful!"
 
 ```
 ./Utils.sh <# of nodes> TTY "tail -100 ~/nohup.out | grep 'Installation successful!' "
 ```
+
+## Install Docker Environment
+
+```
+./Utils.sh <# of nodes> CMD "nohup bash /local/repository/installation/docker.sh > ~/nohup.out &"
+```
+
+
+Then you run the following command again and again until you see "Installation successful!"
+
+```
+./Utils.sh <# of nodes> TTY "tail -100 ~/nohup.out | grep 'Installation successful!' "
+```
+
 
 ## Installing Java
 ```
