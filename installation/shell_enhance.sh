@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SHELL_ENHANCE='ohmybash'
+SHELL_ENHANCE='bash'
 
 
 if [ -n $1 ]; then
@@ -23,13 +23,13 @@ elif [ "$SHELL_ENHANCE" == 'bashit' ]; then
 	sudo chsh -s $(which bash) $(whoami)
 	bash
 
-elif [ "$SHELL_ENHANCE" == 'ohmybash' ]; then
+elif [ "$SHELL_ENHANCE" == 'bash' ]; then
 
 	echo "Using oh-my-bash as default shell enhancement"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 	sudo chsh -s $(which bash) $(whoami)
         bash
-elif [ "$SHELL_ENHANCE" == 'ohmyzsh' ]; then
+elif [ "$SHELL_ENHANCE" == 'zsh' ]; then
 	echo "Using oh-my-zsh as default shell enhancement"
 	sudo chsh -s $(which zsh) $(whoami)
 	zsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
