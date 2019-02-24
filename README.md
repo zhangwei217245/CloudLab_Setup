@@ -139,6 +139,11 @@ Then you run the following command again and again until you see "Installation s
 ./Utils.sh <# of nodes> TTY "tail -100 ~/nohup.out | grep 'Installation successful!' "
 ```
 
+## Install the shell enhancement you like
+
+```
+./Utils.sh <# of nodes> TTY "cd /local/repository/installation; bash ./shell_enhance.sh (fish/bash/zsh/bashit)"
+```
 
 ## Installing Java
 ```
