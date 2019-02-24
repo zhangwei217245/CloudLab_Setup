@@ -27,12 +27,12 @@ elif [ "$SHELL_ENHANCE" == 'ohmybash' ]; then
 
 	echo "Using oh-my-bash as default shell enhancement"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
-	sudo chsh -s $(which fish) $(whoami)
+	sudo chsh -s $(which bash) $(whoami)
         bash
 
 else
 	echo "Using oh-my-bash as default shell enhancement"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
-	sudo chsh -s $(which fish) $(whoami)
+	sudo chsh -s $(which bash) $(whoami)
         bash
 fi
