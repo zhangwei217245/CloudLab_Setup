@@ -29,6 +29,10 @@ elif [ "$SHELL_ENHANCE" == 'ohmybash' ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 	sudo chsh -s $(which bash) $(whoami)
         bash
+elif [ "$SHELL_ENHANCE" == 'ohmyzsh' ]; then
+	echo "Using oh-my-zsh as default shell enhancement"
+	sudo chsh -s $(which zsh) $(whoami)
+	zsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 else
 	echo "Using oh-my-bash as default shell enhancement"
