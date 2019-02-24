@@ -1,6 +1,5 @@
 #!/bin/bash
 
-CURRENT_USER=`users`
 
-ls -l --color=never /users/ | grep -v "total"|egrep -v "(${CURRENT_USER}|geniuser)"|awk '{print "/users/"$NF}'|sudo xargs rm -rf
+ls -l --color=never /users/ | grep -v "total"|egrep -v "($(users)|geniuser)"|awk '{print "/users/"$NF}'|sudo xargs rm -rf
 
