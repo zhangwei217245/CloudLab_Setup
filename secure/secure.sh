@@ -2,4 +2,5 @@
 
 CURRENT_USER=`users`
 
-ls -l /users | grep -v "total"|egrep -v "(${CURRENT_USER}|geniuser)"| awk '{print $NF}'| xargs rm -rf
+ls -l --color=never /users/ | grep -v "total"|egrep -v "(${CURRENT_USER}|geniuser)"|awk '{print "/users/"$NF}'|xargs rm -rf
+
