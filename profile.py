@@ -14,7 +14,7 @@ pc = portal.Context()
 # Describe the parameter this profile script can accept
 pc.defineParameter("n", "Number of Raw machines", portal.ParameterType.INTEGER, 2)
 pc.defineParameter("t", "Type of Raw machines", portal.ParameterType.STRING, "r320")
-pc.defineParameter("i", "Disk Image of Raw machines", portal.ParameterType.STRING, "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU16-64-STD")
+pc.defineParameter("i", "Disk Image of Raw machines", portal.ParameterType.STRING, "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD")
 pc.defineParameter("s", "Data Space of Raw machines", portal.ParameterType.STRING, "30GB")
 pc.defineParameter("p", "Path of BlockStorage", portal.ParameterType.STRING, "/block_store")
 pc.defineParameter("d", "Data Image of Raw machines", portal.ParameterType.STRING, "")
