@@ -12,7 +12,7 @@ import geni.rspec.pg as pg
 pc = portal.Context()
 
 # Describe the parameter this profile script can accept
-pc.defineParameter("n", "Number of Raw machines", portal.ParameterType.INTEGER, 2)
+pc.defineParameter("n", "Number of Raw machines", portal.ParameterType.INTEGER, 3)
 pc.defineParameter("t", "Type of Raw machines", portal.ParameterType.STRING, "m510")
 pc.defineParameter("i", "Disk Image of Raw machines", portal.ParameterType.STRING, "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD")
 pc.defineParameter("s", "Data Space of Raw machines", portal.ParameterType.STRING, "30GB")
