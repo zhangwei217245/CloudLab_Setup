@@ -59,7 +59,7 @@ bash /local/repository/mutual_access/mutual_access.sh
 ## Make the cluster exclusively used by you:
 
 ```
-./Utils.sh <# of nodes> TTY "cd /users/; sudo ls | grep -v ${USER}| grep -v geniuser | xargs rm -rf"
+./Utils.sh <# of nodes> TTY "bash /local/repository/secure/secure.sh"
 ```
 
 ## Increase the file limit
@@ -73,30 +73,30 @@ bash /local/repository/mutual_access/mutual_access.sh
 * For `c220g2` Machines:
 
 ```
-./Utils.sh <# of nodes> TTY "sudo bash /local/repository/fdisk/c220g2.sh"
+./Utils.sh <# of nodes> TTY "cd /local/repository/fdisk/; sudo bash ./c220g2.sh"
 ```
 
 * For `m510` Machines:
 
 ```
-./Utils.sh <# of nodes> TTY "sudo bash /local/repository/fdisk/m510.sh"
+./Utils.sh <# of nodes> TTY "cd /local/repository/fdisk/; sudo bash ./m510.sh"
 ```
 And you will be all set!
 
 * For `m400` Machines:
 ```
-./Utils.sh <# of nodes> TTY "sudo bash /local/repository/fdisk/m400.sh sda"
+./Utils.sh <# of nodes> TTY "cd /local/repository/fdisk/; sudo bash ./m400.sh sda"
 ```
 
    * Note: The m400 machine will reboot after new partition is created. You should login the head machine after it is rebooted and do the following :
 ```
-./Utils.sh <# of nodes> TTY "bash /local/repository/fdisk/formatNmount.sh sda2"
+./Utils.sh <# of nodes> TTY "cd /local/repository/fdisk/; sudo bash ./formatNmount.sh sda2"
 ```
 
 * For `r320` Machine:
 ```
-./Utils.sh <# of nodes> TTY "sudo bash /local/repository/fdisk/r320.sh sdb"
-./Utils.sh <# of nodes> TTY "bash /local/repository/fdisk/formatNmount.sh sdb1"
+./Utils.sh <# of nodes> TTY "cd /local/repository/fdisk/; sudo bash ./r320.sh sdb"
+./Utils.sh <# of nodes> TTY "cd /local/repository/fdisk/; sudo bash ./formatNmount.sh sdb1"
 ```
 
 ## Reboot the nodes:
