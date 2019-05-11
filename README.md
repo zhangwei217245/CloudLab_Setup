@@ -37,25 +37,23 @@ Afterwards, add public key 'id_rsa.pub'  and 'cloudlab.pub' to your cloudlab acc
 
  1. Encrypt the key again with your password.
   
-    ```
-    tar cvzf - cloud_rsa | gpg -o accesskeys.tgz.gpg --symmetric
-    ```
+```
+tar cvzf - cloud_rsa | gpg -o accesskeys.tgz.gpg --symmetric
+```
+
   2. Copy the file accesskeys.tgz.gpg to your head node.
     
-    ```
-    scp accesskeys.tgz.gpg username@hostname:~/.ssh/
-    ```
+```
+scp accesskeys.tgz.gpg username@hostname:~/.ssh/
+```
     
 ### Go to your head node:
 
   1. Login to the head node, decrypt the key and copy it to the node
     
-    ```
-    gpg -d $SCRIPTPATH/accesskeys.tgz.gpg | tar xzvf -
-    mv cloud_rsa ~/.ssh/id_rsa
-    ```
-
 ```
+gpg -d $SCRIPTPATH/accesskeys.tgz.gpg | tar xzvf -
+mv cloud_rsa ~/.ssh/id_rsa
 ./Utils.sh <# of nodes> PUT ~/.ssh/id_rsa ~/.ssh/
 ./Utils.sh <# of nodes> TTY 'cd /local/repository; ./Utils.sh <# of nodes> HOSTS'
 ```
@@ -112,16 +110,19 @@ And you will be all set!
 ```
 
 ## Reboot the nodes:
+
 ```
 ./Utils.sh <# of nodes> TTY "sudo shutdown -r now"
 ```
 
 ## Checking the ulimit:
+
 ```
 ./Utils.sh <# of nodes> TTY "ulimit -a"
 ```
 
 ## Checking Disk Partitioning Result:
+
 ```
 ./Utils.sh <# of nodes> TTY "df -h | grep /data ; ls -l /data | grep 'software'"
 ```
