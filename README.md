@@ -1,6 +1,8 @@
 # CloudLab_Setup
 
-**Before beginning, create your profile using this github repo:**
+## Creating CloudLab profile with this repo:
+
+For first time user, create your profile using this github repo:
 
 1. Login to your cloudlab account
 2. Visit this webpage: https://www.cloudlab.us/manage_profile.php
@@ -9,52 +11,60 @@
 5. Create an experiment using the profile you just created. 
 6. Any problem with the use of this project, please shoot your email at x-spirit.zhang@ttu.edu
 
-## Generate SSH key pair on your own computer, with name as id_rsa
+## Generating SSH keys.
+
+For first time user, Generate two SSH key pairs on your own computer, with name as 'id_rsa' and 'cloud_rsa' respectively, under '~/.ssh/' directory.
 
 Please refer to https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 
-## Add public key id_rsa.pub to your cloudlab account, also you can register your public key in your github account.
+Afterwards, add public key 'id_rsa.pub'  and 'cloudlab.pub' to your cloudlab account, also you can register 'cloudlab.pub' in your github account.
 
-## Instantiate multiple machines on CloudLab, and do the following:
-
-## With you private key, do the following:
-  1. Encrypt the key again with your password.
-    
-    ```
-    tar cvzf - id_rsa | gpg -o accesskeys.tgz.gpg --symmetric
-    ```
-  2. Copy the file accesskeys.tgz.gpg to your head node.
-    
-    ```
-    scp accesskeys.tgz.gpg username@hostname:~/.ssh/
-    ```
-  3. Login to the head node, decrypt the key and copy it to the node
-    
-    ```
-    gpg -d $SCRIPTPATH/accesskeys.tgz.gpg | tar xzvf -
-    mv id_rsa ~/.ssh/
-    ```
-  4. Goto `/local/repository` directory to see all the scripts needed in this tutorial. 
-
+## Instantiate multiple machines on CloudLab based on the profile you just created.
+ 
+  1. Goto `/local/repository` directory to see all the scripts needed in this tutorial. 
 
 ## Initiate Head Node
 
 ```
 ./Utils.sh <# of nodes> HOSTS
 ```
+
+## Mutural Access
+
+### On your local machine
+
+ 1. Encrypt the key again with your password.
+  
+    ```
+    tar cvzf - cloud_rsa | gpg -o accesskeys.tgz.gpg --symmetric
+    ```
+  2. Copy the file accesskeys.tgz.gpg to your head node.
+    
+    ```
+    scp accesskeys.tgz.gpg username@hostname:~/.ssh/
+    ```
+    
+### Go to your head node:
+
+  1. Login to the head node, decrypt the key and copy it to the node
+    
+    ```
+    gpg -d $SCRIPTPATH/accesskeys.tgz.gpg | tar xzvf -
+    mv cloud_rsa ~/.ssh/id_rsa
+    ```
+
+```
+./Utils.sh <# of nodes> PUT ~/.ssh/id_rsa ~/.ssh/
+./Utils.sh <# of nodes> TTY 'cd /local/repository; ./Utils.sh <# of nodes> HOSTS'
+```
+
 ## If you need to clone your project from any code repository, do the following:
   
   1. For github.com ``` ./Utils.sh <# of nodes> TTY "ssh-keyscan github.com >> ~/.ssh/known_hosts" ```
   2. For gitlab.com ``` ./Utils.sh <# of nodes> TTY "ssh-keyscan gitlab.com >> ~/.ssh/known_hosts" ```
   3. For bitbucket.com ``` ./Utils.sh <# of nodes> TTY "ssh-keyscan bitbucket.com >> ~/.ssh/known_hosts" ```
   4. For gitlab in DISCL: ``` ./Utils.sh <# of nodes> TTY "ssh-keyscan discl.cs.ttu.edu >> ~/.ssh/known_hosts" ```
-
-## Mutural Access is optional(Deprecated)
-
-```
-bash /local/repository/mutual_access/mutual_access.sh
-./Utils.sh <# of nodes> PUT ~/.ssh/id_rsa ~/.ssh/
-```
+  
 
 ## Make the cluster exclusively used by you:
 
