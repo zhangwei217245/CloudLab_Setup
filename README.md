@@ -135,7 +135,7 @@ And you will be all set!
 Then you run the following command again and again until you see "Installation successful!"
 
 ```
-./Utils.sh <# of nodes> TTY "tail -100 ~/nohup.out | grep 'Installation successful!' "
+./Utils.sh <# of nodes> TTY "tail -100 ~/nohup.out | grep 'Installation successful'"
 ```
 
 ## Install Docker Environment
