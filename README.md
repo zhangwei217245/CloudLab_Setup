@@ -151,16 +151,6 @@ That means, on each node of the cluster, the apt package manager is stopped.
 ```
 
 
-Keep running `tail -f ~/nohup.out` on head node until no new lines are printed on your terminal, which means the installation process stops. 
-
-Then you run the following command again and again until you see nothing for each node.
-
-```
-./Utils.sh <# of nodes> TTY "ps -ef | grep apt | grep -v grep"
-```
-
-That means, on each node of the cluster, the apt package manager is stopped.
-
 ## Install the shell enhancement you like
 
 ```
