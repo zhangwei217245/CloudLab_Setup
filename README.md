@@ -147,7 +147,7 @@ That means, on each node of the cluster, the apt package manager is stopped.
 ## Install Docker Environment
 
 ```
-./Utils.sh <# of nodes> CMD "cd /local/repository; bash ./installation/docker.sh"
+./Utils.sh <# of nodes> TTY "cd /local/repository; bash ./installation/docker.sh"
 ```
 
 
