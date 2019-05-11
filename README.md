@@ -133,11 +133,16 @@ And you will be all set!
 ```
 ./Utils.sh <# of nodes> CMD "nohup bash /local/repository/installation/install.sh > ~/nohup.out &"
 ```
-Then you run the following command again and again until you see "Installation successful!"
+
+Keep running `tail -f ~/nohup.out` on head node until no new lines are printed on your terminal, which means the installation process stops. 
+
+Then you run the following command again and again until you see nothing for each node.
 
 ```
-./Utils.sh <# of nodes> TTY "tail -100 ~/nohup.out | grep 'Installation successful'"
+./Utils.sh <# of nodes> TTY "ps -ef | grep apt | grep -v grep"
 ```
+
+That means, on each node of the cluster, the apt package manager is stopped.
 
 ## Install Docker Environment
 
@@ -146,11 +151,15 @@ Then you run the following command again and again until you see "Installation s
 ```
 
 
-Then you run the following command again and again until you see "Installation successful!"
+Keep running `tail -f ~/nohup.out` on head node until no new lines are printed on your terminal, which means the installation process stops. 
+
+Then you run the following command again and again until you see nothing for each node.
 
 ```
-./Utils.sh <# of nodes> TTY "tail -100 ~/nohup.out | grep 'Installation successful!' "
+./Utils.sh <# of nodes> TTY "ps -ef | grep apt | grep -v grep"
 ```
+
+That means, on each node of the cluster, the apt package manager is stopped.
 
 ## Install the shell enhancement you like
 
