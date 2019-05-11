@@ -22,6 +22,8 @@ Afterwards, add public key 'id_rsa.pub'  and 'cloudlab.pub' to your cloudlab acc
 ## Instantiate multiple machines on CloudLab based on the profile you just created.
  
   1. Goto `/local/repository` directory to see all the scripts needed in this tutorial. 
+  2. Note that all of these scripts are targeting CloudLab bare metal machine installing Ubuntu 18.04 operating system. 
+  3. All of these scripts suppose that the machines in your cluster are connected by a central hub by which these machines are mutually connected to each other. 
 
 ## Initiate Head Node
 
