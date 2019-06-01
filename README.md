@@ -52,7 +52,7 @@ scp accesskeys.tgz.gpg username@hostname:~/.ssh/
   1. Login to the head node, decrypt the key and copy it to the node
     
 ```
-gpg -d $SCRIPTPATH/accesskeys.tgz.gpg | tar xzvf -
+gpg -d ~/.ssh/accesskeys.tgz.gpg | tar xzvf -
 mv cloud_rsa ~/.ssh/id_rsa
 ./Utils.sh <# of nodes> PUT ~/.ssh/id_rsa ~/.ssh/
 ./Utils.sh <# of nodes> TTY 'cd /local/repository; ./Utils.sh <# of nodes> HOSTS'
