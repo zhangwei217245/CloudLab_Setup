@@ -54,6 +54,7 @@ scp accesskeys.tgz.gpg username@hostname:~/.ssh/
 ```
 gpg -d ~/.ssh/accesskeys.tgz.gpg | tar xzvf -
 mv cloud_rsa ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
 ./Utils.sh <# of nodes> PUT ~/.ssh/id_rsa ~/.ssh/
 ./Utils.sh <# of nodes> TTY 'cd /local/repository; ./Utils.sh <# of nodes> HOSTS'
 ```
