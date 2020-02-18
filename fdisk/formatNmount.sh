@@ -4,10 +4,6 @@ TGTDEV=$1
 USER=`whoami`
 GROUP=`groups | awk '{print $1}'`
 
-ls -l /dev/sd*| awk '{print $NF}'| while read line; do dev_skip=0; for dev in "${dev_mounted[@]}"; do  if [[ "${dev}" == "${line}" ]]; then dev_skip=1; break; fi; done; if [[ dev_skip -eq 0  ]];then echo $line;fi; done
-
-exit;
-
 
 MOUNTPOINT="/data"
 
