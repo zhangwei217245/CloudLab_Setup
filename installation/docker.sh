@@ -8,6 +8,7 @@ if [ -z "$1" ]
     ARCH="amd64"
 fi
 
+sudo apt-get remove docker docker-engine docker.io containerd runc
 
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
