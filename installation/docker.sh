@@ -5,7 +5,7 @@ ARCH=$1
 
 if [ -z "$1" ]
   then
-    ARCH="amd64"
+    ARCH="x86_64"
 fi
 
 sudo apt-get remove docker docker-engine docker.io containerd runc
