@@ -34,7 +34,7 @@ if [ "CMD" = $2 ]; then
 	for i in $(seq 0 $bound)
 	do
     	echo CMD Node-$(($bound - $i))
-    	ssh node-$(($bound - $i)) "$3" &
+    	ssh -n node-$(($bound - $i)) "$3" 
 	done
 fi
 # TTY 
@@ -42,7 +42,7 @@ if [ "TTY" = $2 ]; then
 	for i in $(seq 0 $bound)
 	do
     	echo TTY Node-$(($bound - $i))
-    	ssh -t node-$(($bound - $i)) "$3" 
+    	ssh -t -n node-$(($bound - $i)) "$3" 
 	done
 fi
 
